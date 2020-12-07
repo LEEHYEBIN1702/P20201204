@@ -61,7 +61,8 @@ public class StreamExample5 {
 		}).average();
 		avg.orElse(0.0); // avg 값이 없으면 0.0을 출력하라는 메소드.
 		avg.ifPresent(new DoubleConsumer() {  // avg에 값이 있을 때만 가져오는 메소드. // 값이 없어서 오류가 뜨는 걸 방지하는 용도.
-			@Override           //avg.orElse, avg.ifPresent 는 옵셔널 클래스 일 때만 쓸 수 있음.
+	  //avg.orElse, avg.ifPresent 는 옵셔널 클래스 일 때만 쓸 수 있음.	
+			@Override         
 			public void accept(double value) {
 				System.out.println("평균: " + avg.orElse(0.0));
 				
