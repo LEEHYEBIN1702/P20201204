@@ -1,4 +1,4 @@
-package stream;
+package streams;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
