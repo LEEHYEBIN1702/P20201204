@@ -1,13 +1,13 @@
 package streams;
 
-public class StreamExample4VO {
-	
+public class StreamExample4VO implements Comparable<StreamExample4VO> {
+
 	private int employeeId;
 	private String firstName;
 	private String email;
 	private int salary;
 	private int departmentId;
-	
+
 	public StreamExample4VO(int employeeId, String firstName, String email, int salary) {
 		super();
 		this.employeeId = employeeId;
@@ -16,9 +16,11 @@ public class StreamExample4VO {
 		this.salary = salary;
 		this.departmentId = departmentId;
 	}
+
 	public StreamExample4VO() {
-		
+
 	}
+
 	public int getEmployeeId() {
 		return employeeId;
 	}
@@ -50,17 +52,27 @@ public class StreamExample4VO {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	
+
 	public int getDepartmentId() {
 		return departmentId;
-		
+
 	}
-	public void setDepartmentId (int departmentId) {
-		this.departmentId =  departmentId;
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
-	
+
 	public void showEmpInfo() {
-		System.out.println("사원번호: " + employeeId + ", firstName: " + firstName + ", email " + email + ", salary: " + salary + ", departmentId:" + departmentId);
+		System.out.println("사원번호: " + employeeId + ", firstName: " + firstName + ", email: " + email + ", salary: "
+				+ salary + ", departmentId:" + departmentId);
 	}
-    
+
+	@Override
+//	public int compareTo(StreamExample4VO o) {
+//		return o.salary - this.salary;
+//	}
+
+	public int compareTo(StreamExample4VO t) {
+		return (this.firstName.compareTo(t.firstName));
+	}
 }
